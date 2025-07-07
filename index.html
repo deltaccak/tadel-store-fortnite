@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="Fortnite, Pavos, Tienda, V-Bucks, Comprar, tienda, compra, packs, skins, oficial">
+  <title>Tadel Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="description" content="Compra pavos de Fortnite de forma segura y fácil en Tadel Store. Entrega garantizada, pago seguro, soporte 24/7.">
+  <link rel="icon" href="img/icons8-fortnite.svg" type="image/png">
+ <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+</head>
+<body> 
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">🎮 Tadel Store</a>
+      <div class="nav-links">
+        <a href="#productos">Productos</a>
+        <a href="#features">Características</a>
+        <a href="#contacto">Contacto</a>
+        <div class="cart-icon" id="cartIcon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">🛒 Tu Carrito</h2>
+      <button class="close-cart" id="closeCart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-content" id="cartContent">
+      <div class="empty-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <p>Tu carrito está vacío</p>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>V-Bucks & Packs</h1>
+      <p>La tienda más confiable de Argentina para comprar V-Bucks, Pases de Batalla y packs exclusivos de Fortnite</p>
+      <a href="#productos" class="cta-button">
+        <i class="fas fa-gamepad"></i> Explorar Productos
+      </a>
+    </div>
+  </section>
+
+
+  <section class="products" id="productos">
+    <div class="container">
+      <h2 class="section-title">💎 Productos Destacados</h2>
+      <div class="products-grid" id="productsGrid">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">🚀 ¿Por qué elegirnos?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
+    <path d="M 15 2 C 11.145666 2 8 5.1456661 8 9 L 8 11 L 6 11 C 4.895 11 4 11.895 4 13 L 4 25 C 4 26.105 4.895 27 6 27 L 24 27 C 25.105 27 26 26.105 26 25 L 26 13 C 26 11.895 25.105 11 24 11 L 22 11 L 22 9 C 22 5.2715823 19.036581 2.2685653 15.355469 2.0722656 A 1.0001 1.0001 0 0 0 15 2 z M 15 4 C 17.773666 4 20 6.2263339 20 9 L 20 11 L 10 11 L 10 9 C 10 6.2263339 12.226334 4 15 4 z"></path>
+</svg></path>
+</svg></div>
+          <h3 class="feature-title">100% Seguro</h3>
+          <p class="feature-description">Transacciones protegidas y métodos de pago seguros. Tu información está siempre protegida.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABoElEQVR4nN3ZPShFYRjA8f9L6BZJt0wWNyajpBOD0cdkwsZqpDsoq0U5i8EmG5NFFkXdUD4Ws3IjsTBIPpLPbh2l073nnKeu7vPcX737+dfTOU/vgf9VA+SA7wTnFRhCqeGEEb9nAqW2BRE3QD0KZYBPQcgcSi0KIp6BNAqlgHtByDJKTQoiCuPXgVIngpBNlOoRvnL7UWpNEHGKUungC500ZAylsoKIa6AOhWqAC0HIDEqNCCIegWaqYK9aQqmMYK/6ANqpgr1qA6VSwr2qlyrYq/ZR7Fi4kkSdPSt7Vdw5s7BXxZ3CW6/Pwl6l9tuSLWNEHmisVMh5mSK+gAEqKFemkBWU8xNEXAFNKOaAywQhgyjnJYhYxQA/JuIWaEE5l2CsRjHAi4lYxwg/IuIOaMUAFzNW4xjhRURsYYhfIuIBaMMIFzFWUxjilYjYDSJNj9VTcFVkhgsWwHDINMZ4RSIOg/tgLI/VC9CJMa7IWM1ikBeKOAJqMcj/E/EGdGGQC43VPEZ5oVtClb/SJGP1DnRjWD4IWcC4HeAAaKj0g/wAayToqaK0EGsAAAAASUVORK5CYII=" alt="lightning-bolt--v1"></div>
+          <h3 class="feature-title">Entrega Instantánea</h3>
+          <p class="feature-description">Recibe tus V-Bucks en menos de 5 minutos. Soporte 24/7 para cualquier consulta.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEBElEQVR4nO2ZW4hVZRTHf6aVg4ZCauGFiDAJsxQdRRIt7CoOiij5EmQPlbdMGXFGMUWUmMkHGWSgeuhhEJUQwTEUR9EsoR58EWwKtJC8G84w48zgOHZkwX/Dx+acOXvvb5+LMH9YD+d8e6/1/fde12/DAPrFS8AR4DbwO1DFY0riJpAJSR0wiMcELwMXs5AI5CCwAtipN3YVuA9sKdWGpwONQAtwHrgM3AH+74dELjkOVJSKyOIEG84m3wNPSeeQUpFpzLPJf+U62db6gPXSY3HzOTCsVEQGA/uzbNI2/5azSYuJB856O/C+1p8GmkSkpLCNfgHc0CZPAmO1Nsp5ykuBe8DPSgiG0cAvwOlSZ7PBeqKBf4901uYDbcpgY7LcOwX4W8mhkjLAR8ByYKjzlL9WSg1c6ZJczcg+B9QAXVqzYlkWeBK4oOC9nSBrbaSM8KFH+p0pHU8ACxT45nI9QIfe2FfA88V6K20JiQSJ4dc8190HPigGmZYEJNqdBFEL/AdcAaqVICze3laKbysWkdeBnyISsKf7AzAupGMEsFvrXbpmPEWCucYE5/dUoF6+3eNsvk01ZpPjToY3gGZgmeIE1Znjus9qzxIKiJFKs12SuhChABVOrXHxKrAPeOiQ/dNxn0HqiPt0jSWC1DFbvhx2GWtDjgFfAtNChdAq/Cz1V+fydMlNwLO6713gH6elSQ1rgN4YAd0bcrGockVxVxDUetSLJNJZiBG52CQyjrsuTItEVSgo48h26TjsQaYbmOtLYqIKV6aERDLAXZ+aYinwbELDvwHvObP4i8Bm1YWkZE46tSYWPk5ocK9j0FLwJGcur/ToyzLA2rgk7EneSmDosjZdoYrtZqBPpHutB5FbcWf7TxMasvbEsDJHBpqsIazDg0x1nNj4I6ERm98Ne3KsW1X/FrjuQeRq1Bl/qoeRHdLxTujkJG2pjEJkk4eBVg1ahnlq7d35PS3ZEYVI0EInlR9DDeNwYBHwnYI+DSJnohBpTcFQp45DF2lgCjBa//vqvxaFiE8lzyY2U5wKDUiHPHX2RCESp02PK5aW0TmXj57eQr+RN9Wt5lq3I1LDCyn0Xnnxl4eBOTpKvZRj3bKYYYYnkdb8NOCohwHLTGg0DU+GDzS6GrZ5EmmOQmSLZ2DbAXbwLbFWVX6DDq4Nr6SQhmuiEHnN04gNQluzfE6zZnKVPtFlPGUyEZF0DnHlnj7yGHZ5tu8ZR+x7SmTMkJv4Gk1rQsw4cWZHTbGwLiXjacpqEmJVgQtkVOkFPsMTUxKetqclJ3TEmhpsTvlGQ1fS46Eo8lA26gt52hjgGc0bVh8agANqrS+qM70r6XY22O38f03XntG9DdI1V7oHMADKBI8AYiaX3agSP/AAAAAASUVORK5CYII=" alt="money-bag"></div>
+          <h3 class="feature-title">Mejores Precios</h3>
+          <p class="feature-description">Los precios más competitivos del mercado argentino. Descuentos especiales para compras grandes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <footer class="footer" id="contacto">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACBUlEQVR4nO2ZQUtUURTHf1NWguimcBqjIFpZLUNchtiuaCMGBkNg9RECP0G0s1aT38CFqJVGMYsKBmFa2ASWUZAErbQZioyo4MmF+zZDM75zH+++8+D94L8cmB/3vnvPORdyclLlKlAHfgCvgVEyxiGgAgRtaQEnyAj9wOp/JMKskAGGgI0uEmHKKKYIfIggYdIESijkMFCLKBFmGYXMCCXCXEcZW44iO8BxFPHTUcRkAUV8jCFicg0lLMQU2UQJt2OK/EIJg8C/GCJrKKIaQ6SsrdINHPIGOIAiCkDDQeQSCpkUSjxCKQXglUBkGsWcA/4IquAzKOaeYFXWgT6UcsT+wagyVfsblZwFdgUyi0APSrklPMXm7IGhkopQZhbFo6EXQpn7WlemCHxy2GYHUcgp4ItQZgnoRSHngW9CmWcd7hmzWjfsKPYv8N6WSN4YsbNgiUyjrQIY63JPPbaDQi+MA7+FMk1bmz2JOJ2Z8tm/SGUCh2+s5EPmosM2k6ZlZwqJcwHYTlgmAJ4CJ32U/l89yLTsYZMopx0uTZfU8TRWknSYLvmOxyeKhwmK1PDMTWE/E0TMZVJgWNhpBvvkASliWuC7goFG0OX4VdGBmiP6paPEW2AARZhma0K43d7ZfkglRugK8NyW8EGHmKP8GBnhqK2K5+2DkXkG/AzcsW12Tg4psAf86ZgqZsaVBAAAAABJRU5ErkJggg==" alt="phone"> Contacto</h3>
+         <br>
+        <p>Discord: deltaccak</p>
+        <p>Email: facundo.alvz07@gmail.com</p>
+        <p>Horario: 24/7</p>
+      </div>
+      <div class="footer-section">
+        <h3><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC6UlEQVR4nNWZXYhOQRjHf0S+WR+1QlY+lm0pUaK4kXznyrbttleIq72SEhKSK9IWLpbIx5ULhBJ7SXGzWWxWySpWq4hstMuuHU09Sm/OOXNm5sw5+69/vfWemef5nTPvnGeeF7JRBXAMaAW+ifXno8BshoDmAE1AH6Ai/Au4AlRSQM0DLgP9MQCl7pcxemzuWgBckLtsCvC/J3QemJ8HwHJZHgMOAKX+DdwB1mWd/ExgL9DmMfkoP5VYM3wlr9fvHqBF7pgK7AHgAbA77W+pHKiVNduZQ+IqwZ2SW63kGik1xBypnwVIThm6NxoDvhQgQWXoT3Eg7wuQoDL02ziQVwVIUBm6PQ6ktQAJKkM/iQNpySGhNwlFporw3TiQ5sAQGmARUCVAKoV1lR2p/YFBDkrchbKdqhRujAOpCQjxHBgJDAceWozfFAeyLBCErttWScxGyzkq40AmeC7No3xK4uljb4/F+B5gBAlqC/AiGy+xblvOcR8Dnc0YZL3EaXCY47AJSL3FxB8M67SLEmOa1Eq2IGtNWzlpJtUAi8VdMdd1A1MkxjUHiF5gHIZqTzGxTr76nx/vy4jr9Nautdlxad4ihY6knPwrsEbGTgYelXyvmwp/d8V3jiD1aUCqLcuN7TJ+rNRCSrqMszxtJH3ARFIqaokkNd12yXi9z1+SxoHWag8NjJtYaJ9lsEHgkMwxTDwK6HCEULY9rzLgu0PQM1JHaR33APFCboqVzjkGvwGscGypKvFOHFTlYV37gOgCRuOoqx4ScfUOPKjC8ijqyx0mla6pTuYIshWPKpPCMDTEdTLQlsAQn5Ma1S5yqVrTuo4MpZfY6wAQzQTQEuBHhhDPgDEEUoPUVL4hPgJzCawDniH0U15JTmryBKFfuBvJUboaPe0Iof8l20ZBdMISQjfaNlAw1aXczbqkRVtILZVOYhLEY2A6BVc5cC8CYFAOa85ni5CqKekmdvuuZAmoqdJ518eASVlG+gOUBqUvs/HtvQAAAABJRU5ErkJggg==" alt="security-checked">Seguridad</h3>
+         <br>
+        <p>Métodos de pago seguros</p>
+        <p>Garantía de entrega</p>
+        <p>Soporte técnico</p>
+      </div>
+      <div class="footer-section">
+        <h3><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC6UlEQVR4nNWZXYhOQRjHf0S+WR+1QlY+lm0pUaK4kXznyrbttleIq72SEhKSK9IWLpbIx5ULhBJ7SXGzWWxWySpWq4hstMuuHU09Sm/OOXNm5sw5+69/vfWemef5nTPvnGeeF7JRBXAMaAW+ifXno8BshoDmAE1AH6Ai/Au4AlRSQM0DLgP9MQCl7pcxemzuWgBckLtsCvC/J3QemJ8HwHJZHgMOAKX+DdwB1mWd/ExgL9DmMfkoP5VYM3wlr9fvHqBF7pgK7AHgAbA77W+pHKiVNduZQ+IqwZ2SW63kGik1xBypnwVIThm6NxoDvhQgQWXoT3Eg7wuQoDL02ziQVwVIUBm6PQ6ktQAJKkM/iQNpySGhNwlFporw3TiQ5sAQGmARUCVAKoV1lR2p/YFBDkrchbKdqhRujAOpCQjxHBgJDAceWozfFAeyLBCErttWScxGyzkq40AmeC7No3xK4uljb4/F+B5gBAlqC/AiGy+xblvOcR8Dnc0YZL3EaXCY47AJSL3FxB8M67SLEmOa1Eq2IGtNWzlpJtUAi8VdMdd1A1MkxjUHiF5gHIZqTzGxTr76nx/vy4jr9Nautdlxad4ihY6knPwrsEbGTgYelXyvmwp/d8V3jiD1aUCqLcuN7TJ+rNRCSrqMszxtJH3ARFIqaokkNd12yXi9z1+SxoHWag8NjJtYaJ9lsEHgkMwxTDwK6HCEULY9rzLgu0PQM1JHaR33APFCboqVzjkGvwGscGypKvFOHFTlYV37gOgCRuOoqx4ScfUOPKjC8ijqyx0mla6pTuYIshWPKpPCMDTEdTLQlsAQn5Ma1S5yqVrTuo4MpZfY6wAQzQTQEuBHhhDPgDEEUoPUVL4hPgJzCawDniH0U15JTmryBKFfuBvJUboaPe0Iof8l20ZBdMISQjfaNlAw1aXczbqkRVtILZVOYhLEY2A6BVc5cC8CYFAOa85ni5CqKekmdvuuZAmoqdJ518eASVlG+gOUBqUvs/HtvQAAAABJRU5ErkJggg==" alt="security-checked"> Información</h3>
+        <br>
+        <p><a href="#" class="info-link">Términos y condiciones</a></p>
+        <p><a href="#" class="info-link">Política de privacidad</a></p>
+        <p><a href="#" class="info-link">Preguntas frecuentes</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Pavortnite Store. No afiliados a Epic Games. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+ <script src="script.js"></script>
+</body>
+</html>
